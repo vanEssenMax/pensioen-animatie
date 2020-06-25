@@ -11,3 +11,105 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.deck{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+}
+
+.deck .card{
+  position: absolute;
+}
+
+.card{
+  transition: ease all 0.5s;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 5px;
+  width: 300px;
+  height: 500px;
+  box-shadow: 0 12.5px 20px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3);
+  background: #f4f4f4;
+}
+
+.ontop{
+  transform: rotate(0deg) !important;
+  position: absolute;
+  width: 400px;
+  height: 600px;
+  margin-left: -50px;
+  margin-top: -50px;
+  z-index: 10000;
+}
+
+.cardfront{
+  border-radius: 5px;
+  position: absolute;
+  background: #f4f4f4;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+}
+.turned .cardfront{
+  z-index: -1;
+}
+
+.cardback{
+  border-radius: 5px;
+  position: absolute;
+  line-height: 400px;
+  height: 100%;
+  background: green;
+  transform: rotate3d(0, 1, 0, 180deg) !important;
+  width: 100%;
+}
+
+.rotate{
+  transition: ease transform 0.5s;
+  transform: rotate(0deg) rotate3d(0, 1, 0, 180deg) !important;
+}
+
+.showdealer{
+  display: block !important;
+}
+
+.moveleft{
+  position: absolute;
+  transition: ease all 0.5s;
+  margin-left: -500px;
+  margin-top: 120px;
+  transform: rotate(-20deg);
+}
+
+
+
+.moveright{
+  position: absolute;
+  transition: ease all 0.5s;
+  margin-left: 500px;
+  margin-top: 80px;
+  transform: rotate(10deg);
+}
+
+.fadeout{
+  opacity: 0;
+}
+
+.invis{
+  display: none !important;
+}
+
+.dealer{
+  cursor: pointer;
+  display: none;
+  width: 100vw;
+  position: fixed;
+  height: 100vh;
+  z-index: 100;
+  left: calc(-50vw + 150px);
+  top: calc(-50vh + 250px);
+}
